@@ -1,4 +1,4 @@
-This is the place where backup my fastfetch config.
+This is the place where I backup my fastfetch config.
 
 This is what it looks like:
 
