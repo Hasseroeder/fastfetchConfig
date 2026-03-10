@@ -1,7 +1,7 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
   "logo": {
-    "source": "debian",
+    "source": "~/.config/fastfetch/fastfetchConfig/fastfetch_antix/trans-neo",
     "padding": {
       "left": 2,
       "right": 3,
@@ -16,24 +16,35 @@
     {
       "type": "os",
       "key": " ┌  OS       ",
-      "format": "{pretty-name}"
+      "format": "{pretty-name}",
+      "keyColor":"#52b0d6"
     },
     {
       "type": "kernel",
       "key": " ├ 󰌽 Kernel   ",
-      "format": "{release}"
+      "format": "{release}",
+      "keyColor":"#52b0d6"
+    },
+    {
+      "type": "localip",
+      "key": " ├ 󰌘 Server   ",
+      "format": "{ipv4}",
+      "keyColor":"#52b0d6"
     },
     {
       "type": "uptime",
-      "key": " ├ 󱎫 Uptime   "
+      "key": " ├ 󱎫 Uptime   ",
+      "keyColor":"#52b0d6"
     },
     {
       "type": "packages",
-      "key": " ├  Pkgs     "
+      "key": " ├  Pkgs     ",
+      "keyColor":"#52b0d6"
     },
     {
       "type": "shell",
-      "key": " └ 󰆍 Shell    "
+      "key": " └ 󰆍 Shell    ",
+      "keyColor":"#52b0d6"
     },
     {
       "type": "custom",
@@ -42,34 +53,40 @@
     {
       "type": "cpu",
       "key": " ┌  CPU      ",
-      "format": "{name}"
+      "format": "{name}",
+      "keyColor":"#D9D9D9"
     },
     {
       "type": "gpu",
       "key": " ├  GPU      ",
-      "format": "{name}"
+      "format": "{name}",
+      "keyColor":"#D9D9D9"
     },
     {
       "type": "memory",
       "key": " ├  RAM      ",
-      "format": "{used}/{total} ({percentage})"
+      "format": "{used}/{total} ({percentage})",
+      "keyColor":"#D9D9D9"
     },
     {
       "type": "swap",
       "key": " ├  Swap     ",
-      "format": "{used}/{total} ({percentage})"
+      "format": "{used}/{total} ({percentage})",
+      "keyColor":"#D9D9D9"
     },
     {
       "type": "disk",
       "key": " ├  /        ",
       "folders": "/",
-      "format": "{size-used}/{size-total} ({size-percentage})"
+      "format": "{size-used}/{size-total} ({size-percentage})",
+      "keyColor":"#D9D9D9"
     },
     {
       "type": "disk",
       "key": " └  /home    ",
       "folders": "/home",
-      "format": "{size-used}/{size-total} ({size-percentage})"
+      "format": "{size-used}/{size-total} ({size-percentage})",
+      "keyColor":"#D9D9D9"
     },
     {
       "type": "custom",
@@ -77,26 +94,37 @@
     },
     {
       "type": "title",
-      "key": " ┌  Host     ",
-      "format": "{user-name}@{host-name}"
+      "key": " ┌  F-word   ",
+      "keyColor": "#DA99A3",
+      "format": "yes"
     },
     {
-      "type": "localip",
-      "key": " ├ 󰌘 IPv4     ",
-      "format": "{ipv4}"
+      "type": "title",
+      "key": " ├  Host     ",
+      "format": "{user-name}@{host-name}",
+      "keyColor":"#DA99A3"
+    },
+    { 
+      "type": "command", 
+      "key": " ├ 󰌘 Client   ",
+      "text": "echo $SSH_CLIENT | cut -d' ' -f1", 
+      "keyColor":"#DA99A3"
     },
     {
       "type": "locale",
-      "key": " ├ 󰊷 Locale   "
-    },
+      "key": " ├ 󰊷 Locale   ",
+      "keyColor":"#DA99A3"
+    },   
     {
       "type": "command",
       "key": " ├  Time     ",
-      "text": "date '+%Y-%m-%d %H:%M:%S %Z'"
+      "text": "printf \"%s \u001b[90m////\\e[0m %s \u001b[90m////\\e[0m %s\n\" \"$(TZ=America/Edmonton date +%H:%M  MST)\" \"$(TZ=America/Detroit date +%H:%M  EST)\" \"$(TZ=Europe/Berlin date +%H:%M  CET)\"",
+      "keyColor": "#DA99A3"
     },
     {
       "type": "terminal",
-      "key": " └ 󰆍 Terminal "
+      "key": " └ 󰆍 Terminal ",
+      "keyColor":"#DA99A3"
     },
     "break",
     "colors"
